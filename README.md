@@ -1,2 +1,2 @@
-# asort
+# sort
 Another AngularJS sort plugin
