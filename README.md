@@ -1,5 +1,5 @@
 # sort
-**Another AngularJS sort plugin**
+**Another AngularJS Sort plugin**
 
 This plugin allows you to sort tabular data in a simple way. Sorting can be done automatically for the primitives types and dates. You can also provide a custom (provide) sort function.
 
@@ -9,7 +9,7 @@ AngularJS 1.3.1+
 Include **sort.js** and **sort.css** in your scripts. Feel free to customize sort.css as the classes are actually very simple.
 ### Usage
 Although the most common usage would be to used a *ng-repeat* to display tabular data, this plugin doesn't require a *ng-repeat*. In fact, the data are not copied by the plugin but rather sorted directly at the source. 
-#### Simplest form
+#### Simplest Form
 Assuming you have the following configuration:
 
 **Model**
@@ -18,6 +18,7 @@ $scope.persons = [{ name: 'Maurice', age: '10' }, { name: 'Your name', age: 0 },
 ```
 
 **View**
+
 ```html
 <div sort="persons">
   <div sort-property="name">Name</div>
@@ -45,7 +46,7 @@ Note that in the example above, you'll basically have to take care of displaying
 ```
 Notice that despite the *ng-repeat* directive, you still need to define the model the plugins should work on with `sort="persons"`.
 
-#### Sort order
+#### Sort Order
 Order is achieved through *sort-order*. Allowed values are `asc` and `desc`.
 By default, the sort order is ascending if not specified otherwise. Also note that clicking on a header always reverses the sorting. And yes you can use *sort-order* and *sort-default* altogether.
 
@@ -53,13 +54,15 @@ By default, the sort order is ascending if not specified otherwise. Also note th
 <div sort-property="name" sort-default="true" sort-order="desc"></div>
 ```
 
-#### Sorting date
+#### Sorting Date
 
-#### Setting a preset
+#### Setting a Preset
 
-#### Custom sorting function
+#### Custom Sorting Function
 
-#### Custom asynchronous sort function
+#### Custom Asynchronous Sort Function
+
+#### Parameters Table
 
 ### Future work
 
