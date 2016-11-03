@@ -101,6 +101,7 @@ $scope.myCustomSort = function(prop, order, date, preset) {
   return $http.get(url).then(..., ...);
 };
 ```
+
 #### Setting a Preset for Sorting 
 As explained previously, the custom sorting function is global for all properties and receives the property name as the first parameter. Anyway, the plugin allows you to customize sorting on the property level only for a very special case. Assume that you have an array of persons with *name*, *age* and *status* which should signal their marital status through a `string` e.g. *married*, *divorced*, *single*, *widowed* just to name a few. Out of the box, you could only order people alphabetically according to their marital status. But if you needed the marital status to be sorted logically i.e. from *single* to *widowed* in the ascending case and reversely in the descending case, you could write a custom function. But you don't need to :) Through the **sort-preset**, you could predefine an ascending order with which a property could be sorted. For instance doing this:
 ```javascript
@@ -127,7 +128,7 @@ The html and table below show an extreme short summary of what has be explained 
 ```
 
 Attribute | Usage | Level
----- | ------ | ---
+------------------- | ------ | ---
   **sort** | model to be sorted | parent
   | *type:* array on the scope
   **sort-refresh** | custom sort function | parent
@@ -138,14 +139,16 @@ Attribute | Usage | Level
   | *info:* use " \| date" to enable sorting on type Date |
   **sort-order** | define the sorting order | header
   | *type:* string |
-  | *info:* possible values are 'asc', 'desc'. 'asc' is set by default. Clicking on a header reverses the sorting order. Predefined Css classes can be used to customize the view |
+  | *info:* possible values are 'asc', 'desc'. 'asc' is set by default. Clicking on a header reverses the sorting order. Predefined css classes can be used to customize the view |
   **sort-default** | default sorting until a header is clicked | header
   | *type:* bool |
   **sort-preset** | predefine values upon sorting should be performed | header
   | *type:* array with values of the same type as the property |
 
 ### Future work
-Implement the plugin for angularJS 2.x. Wanna help? Feel free or send me an email ;)
+1. Implement the plugin for angularJS 2.x. 
+
+Wanna help? Feel free or send me an email ;)
 
 ### License
 
