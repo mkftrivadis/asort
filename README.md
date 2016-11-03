@@ -8,11 +8,9 @@ AngularJS 1.3.1+
 ### Installation
 Include **sort.js** and **sort.css** in your scripts. Feel free to customize sort.css as the classes are actually very simple.
 
-### Summary of Usage
-The table below shows an extreme short summary of what will be explained later in this readme.
+### Usage 
+Been here already? then [jump to the summary table](#summary-of-usage)
 
-
-### Usage
 Although the most common usage would be to used a *ng-repeat* to display tabular data, this plugin doesn't require a *ng-repeat*. In fact, the data are not copied by the plugin but rather sorted directly at the source. 
 #### Simplest Form
 Assuming you have the following configuration:
@@ -57,18 +55,14 @@ Order is achieved through *sort-order*. Allowed values are `asc` and `desc`. By 
 Clicking on a header always reverses the sorting. For instance, if the data are not sorted, clicking on a header will sort it ascending; clicking again on the same header will sort the data descending and so on. A css class (`sort-asc` or `sort-desc`) is always appended to the header to reflect the current sort order. 
 
 Note that you can combine *sort-order* and *sort-default*.
-
-
 ```html
 <div sort-property="name" sort-default="true" sort-order="desc"></div>
 ```
-
 #### Sorting Date
 Out of the box, the plugin provides sorting for simple types like `int`, `string` and `bool`. The type `Date` is also suppported but needs to be enabled with `| date` through *sort-property*. Assuming that the property is called *myDateProperty* and that it is a date object or an international formatted date string like `2016-03-19T04:22:14` for instance, you shoud activate sorting with the following code:
 ```html
 sort-property="myDateProperty | date"
 ```
-
 Although the syntax above looks like a filter is being applied, it really isn't. Back in the code, the value of *sort-property* is parsed to and attempt to convert the string to a Date object is made.
 
 #### Custom Sorting Function
@@ -95,7 +89,6 @@ your view should be similar to the following:
   <div sort-property="age"></div>
 </div>
 ```
-
 So clicking on the name header for instance shall trigger a call of your custom function `myCustomSort` with the 4 parameters set as follow
 ```javascript
 myCustomSort('name', 'asc', null, null)
@@ -108,7 +101,6 @@ $scope.myCustomSort = function(prop, order, date, preset) {
   return $http.get(url).then(..., ...);
 };
 ```
-
 #### Setting a Preset for Sorting 
 As explained previously, the custom sorting function is global for all properties and receives the property name as the first parameter. Anyway, the plugin allows you to customize sorting on the property level only for a very special case. Assume that you have an array of persons with *name*, *age* and *status* which should signal their marital status through a `string` e.g. *married*, *divorced*, *single*, *widowed* just to name a few. Out of the box, you could only order people alphabetically according to their marital status. But if you needed the marital status to be sorted logically i.e. from *single* to *widowed* in the ascending case and reversely in the descending case, you could write a custom function. But you don't need to :) Through the **sort-preset**, you could predefine an ascending order with which a property could be sorted. For instance doing this:
 ```javascript
@@ -121,6 +113,36 @@ $scope.myPresetForStatus = ['single', 'married', 'divorced', 'widowed'];
 ...
 ```
 will sort people by marital status according to the order given in the model *$scope.myPresetForStatus*.
+
+### Summary of Usage
+The html and table below show an extreme short summary of what has be explained earlier in this readme.
+
+```html
+<div sort="persons" sort-refresh="myCustomSortFunction"> <!-- parent -->
+  <div sort-property="name">Name</div> <!-- header -->
+  <div sort-property="age" sort-default="true">Age</div> <!-- header -->
+  <div sort-property="born | date">Day of Birth</div> <!-- header -->
+  <div sort-property="status" sort-preset="myPresetForStatusArray">Marital Status</div> <!-- header -->
+<div>
+```
+
+Attribute | Usage | Level
+---- | ------ | ---
+  **sort** | model to be sorted | parent
+  | *type:* array on the scope
+  **sort-refresh** | custom sort function | parent
+  | *type:* function(prop, order, date, preset) |
+  | *info:* can be asynchronous, in which case the function should return a promise |
+  **sort-property** | property to sort upon. Out of box sorting is only for simple type (int, string, bool) | header
+  | *type:* string |
+  | *info:* use " \| date" to enable sorting on type Date |
+  **sort-order** | define the sorting order | header
+  | *type:* string |
+  | *info:* possible values are 'asc', 'desc'. 'asc' is set by default. Clicking on a header reverses the sorting order. Predefined Css classes can be used to customize the view |
+  **sort-default** | default sorting until a header is clicked | header
+  | *type:* bool |
+  **sort-preset** | predefine values upon sorting should be performed | header
+  | *type:* array with values of the same type as the property |
 
 ### Future work
 Implement the plugin for angularJS 2.x. Wanna help? Feel free or send me an email ;)
