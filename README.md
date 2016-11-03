@@ -69,6 +69,7 @@ Although the syntax above looks like a filter is being applied, it really isn't.
 You can bypass the out of the box sorting function by providing your own function through the **sort-refresh** attribute. The function provided there should expect 4 parameters:
 
 1. The property to be sorted upon as a string
+
 2. The sorting order as a string i.e. `asc` or `desc`
 3. 'date' or null depending on whether date sorting is enabled as described in [Sorting Date](#sorting-date)
 4. The preset array (see later in (#setting-a-preset-for-sorting) or null
@@ -103,7 +104,11 @@ $scope.myCustomSort = function(prop, order, date, preset) {
 ```
 
 #### Setting a Preset for Sorting 
-As explained previously, the custom sorting function is global for all properties and receives the property name as the first parameter. Anyway, the plugin allows you to customize sorting on the property level only for a very special case. Assume that you have an array of persons with *name*, *age* and *status* which should signal their marital status through a `string` e.g. *married*, *divorced*, *single*, *widowed* just to name a few. Out of the box, you could only order people alphabetically according to their marital status. But if you needed the marital status to be sorted logically i.e. from *single* to *widowed* in the ascending case and reversely in the descending case, you could write a custom function. But you don't need to :) Through the **sort-preset**, you could predefine an ascending order with which a property could be sorted. For instance doing this:
+As explained previously, the custom sorting function is global for all properties and receives the property name as the first parameter. Anyway, the plugin allows you to customize sorting on the property level only for a very special case. 
+
+Assume that you have an array of persons with *name*, *age* and *status* which should signal their marital status through a `string` e.g. *married*, *divorced*, *single*, *widowed* just to name a few. Out of the box, you could only order people alphabetically according to their marital status. But if you needed the marital status to be sorted logically i.e. from *single* to *widowed* in the ascending case and reversely in the descending case, you could write a custom function. Good news: you actually don't need to :) 
+
+Through the **sort-preset**, you could predefine an ascending order with which a property could be sorted. For instance doing this:
 ```javascript
 $scope.myPresetForStatus = ['single', 'married', 'divorced', 'widowed'];
 ```
