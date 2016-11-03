@@ -64,7 +64,7 @@ Note that you can combine *sort-order* and *sort-default*.
 ```
 
 #### Sorting Date
-Out of the box, the plugin provides sorting for simple types like `int`, `string` and `bool`. The type `Date` is also suppported but needs to be enabled with `| date` through *sort-property*. Assuming that the property is called *myDateProperty* and that it is an international date formatted string like `2016-03-19T04:22:14` for instance, you should write:
+Out of the box, the plugin provides sorting for simple types like `int`, `string` and `bool`. The type `Date` is also suppported but needs to be enabled with `| date` through *sort-property*. Assuming that the property is called *myDateProperty* and that it is a date object or an international formatted date string like `2016-03-19T04:22:14` for instance, you shoud activate sorting with the following code:
 ```html
 sort-property="myDateProperty | date"
 ```
