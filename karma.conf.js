@@ -18,7 +18,7 @@ module.exports = function(config) {
 	  'components/angular/angular.js',
 	  'components/angular-mocks/angular-mocks.js',
       'src/*.js',
-      'tests/*.js'
+      'test/*.js'
     ],
 
 
@@ -38,7 +38,7 @@ module.exports = function(config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'html'],
 	htmlReporter: {
-	  outputFile: 'tests/results.html'
+	  outputFile: 'test/results.html'
 	},
 
 

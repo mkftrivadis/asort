@@ -26,7 +26,7 @@ gulp.task('scripts', function () {
    .pipe(gulp.dest(dest + 'js'));
 });
 
-gulp.task('tests', function(done){
+gulp.task('test', function(done){
   new Server({
     configFile: __dirname + '/karma.conf.js',
 	singleRun: true 
@@ -38,7 +38,7 @@ gulp.task('tests', function(done){
 gulp.task('watch', function() {
   gulp.watch('src/*.css', ['css']);
   gulp.watch('src/*.js', ['scripts']);
-  gulp.watch('tests/*.js', ['tests']);
+  gulp.watch('test/*.js', ['tests']);
 });
 
-gulp.task('default', ['css', 'scripts', 'tests', 'watch']);
+gulp.task('default', ['css', 'scripts', 'test', 'watch']);
