@@ -153,7 +153,7 @@ Attribute | Usage | Level
 ### Future work
 1. Implement the plugin for angularJS 2.x. 
 
-Wanna help? Feel free or send me an email ;)
+Wanna help? Feel free or send me an email :smile:
 
 ### License
 
