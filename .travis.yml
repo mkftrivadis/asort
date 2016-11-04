@@ -2,5 +2,7 @@ language: node_js
 node_js:
   - "0.12.2"
 before_script:
+  - npm bower -g install
   - npm install -g gulp
+  - bower install
 script: gulp
