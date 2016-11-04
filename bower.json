@@ -1,0 +1,39 @@
+{
+  "name": "sort",
+  "description": "another tabular sort plugin for angularjs",
+  "main": [
+    "js/sort.js",
+    "css/sort.css"
+  ],
+  "devDependencies": {
+	"angular": "^1.3.1",
+    "angular-mocks": "^1.3.1",
+	"jasmine": "^2.4.1"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git://github.com/mkftrivadis/sort"
+  },
+  "keywords": [
+    "sort",
+    "tabular",
+	"angular",
+    "angularjs"
+  ],
+  "authors": [
+	"Maurice K. Fonwe <maurice.kenmeuefonwe@trivadis.com>",
+    "Maurice K. Fonwe <k_f_maurice@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test",
+    "tests"
+  ],
+  "resolutions": { 
+     "angular": "~1.3.1",
+	 "jasmine": "~2.4.1"	 
+   }
+}
