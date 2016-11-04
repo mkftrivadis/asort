@@ -41,4 +41,4 @@ gulp.task('watch', function() {
   gulp.watch('test/*.js', ['tests']);
 });
 
-gulp.task('default', ['css', 'scripts', 'test', 'watch']);
+gulp.task('default', ['css', 'scripts', 'test']);
