@@ -1,5 +1,7 @@
 # sort - **another angularJS sorting plugin**
 
+[![Build Status](https://travis-ci.org/mkftrivadis/sort.svg?branch=master)](https://travis-ci.org/mkftrivadis/sort)
+
 This plugin allows you to sort tabular data in a simple way. Sorting can be done automatically for the primitives types and dates. You can also provide a custom (provide) sort function.
 
 ### Dependencies
