@@ -1,0 +1,13 @@
+.sorted {
+  color: blue;
+}
+.sort-asc,
+.sort-desc {
+  color: blue;
+}
+.sort-asc::after {
+  content: ' \21a5';
+}
+.sort-desc::after {
+  content: ' \21a7';
+}
