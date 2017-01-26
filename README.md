@@ -90,8 +90,7 @@ your view should be similar to the following:
 <div sort="persons" sort-refresh="myCustomSort">
   <div sort-property="name"></div>
   <div sort-property="age"></div>
-</div>
-```
+</div>```
 So clicking on the name header for instance shall trigger a call of your custom function `myCustomSort` with the 4 parameters set as follow
 ```javascript
 myCustomSort('name', 'asc', null, null)
@@ -152,11 +151,11 @@ Attribute | Usage | Level
   **sort-preset** | predefine values upon sorting should be performed | header
   | *type:* array with values of the same type as the property |
 
-### Future work
+## Future work
 1. Implement the plugin for angularJS 2.x. 
 
 Wanna help? Feel free to contribute or send me an email :smile:
 
-### License
+## License
 
 Licensed under MIT.
