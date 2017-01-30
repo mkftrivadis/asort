@@ -152,8 +152,7 @@ Attribute | Usage | Level
 
 ## Future work
 1. Implement the plugin for angularJS 2.x. 
-
-Wanna help? Feel free to contribute or send me an email :smile:
+See [here](https://github.com/mkftrivadis/sort-2/blob/master/README.md)
 
 ## License
 
