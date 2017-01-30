@@ -31,8 +31,7 @@ $scope.persons = [{ name: 'Maurice', age: '10' }, { name: 'Your name', age: 0 },
 ```
 As you probably figured out:
 - you have two headers which allows you to sort persons by name or age.
-- **sort** defines the data to be sorted
-- **sort-property** declares the property to be used to sort the data upon click
+- **sort** defines the data to be sorted- **sort-property** declares the property to be used to sort the data upon click
 - with **sort-default**, you can set the default initial sorting property. If it is not defined then the data will be initially displayed as they are in the model.
 
 Note that in the example above, you'll basically have to take care of displaying the data. Using the plugin in a table with a *ng-repeat* should be something like:
@@ -40,8 +39,7 @@ Note that in the example above, you'll basically have to take care of displaying
 <table sort="persons">
   <tr>
     <th sort-property="name">Name</th>
-    <th sort-property="age" sort-default="true">Age</th>
-  </tr>
+    <th sort-property="age" sort-default="true">Age</th>  </tr>
   <tr ng-repeat="person in persons">
     <td>{{person.name}}</td>
     <td>{{person.age}}</td>
@@ -70,7 +68,6 @@ Although the syntax above looks like a filter is being applied, it really isn't.
 You can bypass the out of the box sorting function by providing your own function through the **sort-refresh** attribute. The function provided there should expect 4 parameters:
 
 1. The property to be sorted upon as a string
-
 2. The sorting order as a string i.e. `asc` or `desc`
 3. 'date' or null depending on whether date sorting is enabled as described in [Sorting Date](#sorting-date)
 4. The preset array (see later in (#setting-a-preset-for-sorting) or null
